@@ -4,7 +4,11 @@
   "description": "Rest api for communication with WhatsApp",
   "main": "./dist/main.js",
   "type": "commonjs",
+   "engines": {         
+    "node": "20.x"
+},
   "scripts": {
+    "postinstall": "npm run db:generate",
     "build": "tsc --noEmit && tsup",
     "start": "tsnd -r tsconfig-paths/register --files --transpile-only ./src/main.ts",
     "start:prod": "node dist/main",
